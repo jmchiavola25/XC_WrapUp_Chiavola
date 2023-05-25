@@ -1,0 +1,71 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.App-title {
+  align-items: center;
+  font-size: 50px;
+}
+
+.App-Select-country {
+  font-size: 30px;
+  margin-left: 30px;
+}
+
+.Select-country {
+  font-size: 30px;
+  width: 300px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.country-list {
+  width: 300px;
+}
+
+.Select-state{
+  visibility: hidden;
+  font-size: 30px;
+  width: 300px;
+  margin-left: 500px;
+  margin-top: -80px;
+
+}
+
+.state-list {
+  width: 300px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
