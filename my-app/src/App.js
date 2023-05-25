@@ -1,44 +1,38 @@
-//import logo from './logo.svg';
 import './App.css';
 import {useState, useEffect} from 'react';
 
 function App() {
 
   const url = 'https://xc-countries-api.fly.dev/api/countries/';
-  const selectCountry = document.getElementById('country-list');
   const [data, setData] = useState([]);
-  console.log("hello");
-  /*const option = document.createElement('option');
-  option.innerHTML = "test";
-  selectCountry.append(option);*/
+  const [showStateList, setShowStateList] = useState(false);
+  const [data2, setData2] = useState([]);
+  const [stateURL, setStateURL] = useState();
   
-  
+  //Update country list
   useEffect(() => 
   {
     fetch(url)
-    .then(res => {res.json()})
-    .then(res => {
-      console.log("yay");
-
-      res.forEach(country => {
-        const option = document.createElement('option');
-        option.value = country.id;
-        option.innerHTML = country.name;
-        selectCountry.append(option);
-        //setData(prev => [...prev, country]);
-    });
+    .then(data => data.json())
+    .then(data => {setData(data)});
   });
-  //updateCountries();
-});
 
-  const updateCountries = () => {
-    data.forEach(country => {
-      const option = document.createElement('option');
-      option.value = country.id;
-      option.innerHTML = country.name;
-      selectCountry.append(option);
-    });
+  //When selected country is changed
+  const HandleCountryChange = (event) => {
+    setShowStateList(true);
+    setStateURL(`https://xc-countries-api.fly.dev/api/countries/${event.target.value}/states/`);
   }
+
+  
+  //Update state list
+  useEffect(() => {
+      if (showStateList)
+      {
+        console.log(stateURL);
+      fetch(stateURL)
+      .then(data2 => data2.json())
+      .then(data2 => {setData2(data2)})};
+    }, [stateURL, showStateList]);
   
 
   return (
@@ -49,18 +43,25 @@ function App() {
       <div>
             <section className="Select-country">
               <label for="countries">Choose a Country</label>
-              <select className="country-list" name="country-list" id="country-list">
-                {updateCountries()}
+              <select className="country-list" name="country-list" id="country-list" onChange={HandleCountryChange}>
+                <option value="default" name="default">Select a Country</option>
+                { data.map((country) => {
+                  //console.log(data2);
+                  return <option value={country.code}>{country.name}</option>
+                })}
               </select>
             </section>
         </div>
-        <div>
-          <section className="Select-state">
+        <div className="divForStates" id="divForStates">
+          {showStateList && <section className="Select-state" id="Select-state">
             <label for="states">Choose a State</label>
             <select className="state-list" name="state-list" id="state-list">
-
-            </select>
-          </section>
+            <option name="default">Select a State</option>
+                { data2.map((state) => {
+                  return <option>{state.name}</option>
+                })}
+              </select>
+          </section>}
         </div>
     </div>
   );
