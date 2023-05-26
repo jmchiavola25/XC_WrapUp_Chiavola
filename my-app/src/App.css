@@ -37,22 +37,22 @@
   margin-left: 30px;
 }
 
-.Select-country {
-  font-size: 30px;
+.countriesDropDown {
+  font-size: 20px;
   width: 300px;
   margin-left: 50px;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .country-list {
   width: 300px;
 }
 
-.Select-state{
-  font-size: 30px;
+.statesDropDown{
+  font-size: 20px;
   width: 300px;
   margin-left: 500px;
-  margin-top: -80px;
+  margin-top: -265px;
 
 }
 
