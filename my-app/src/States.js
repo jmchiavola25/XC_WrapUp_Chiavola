@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import Dropdown from './Dropdown.js';
+import AddState from './AddState.js';
 
 function States(props, {onSelectChange})
 {
@@ -7,12 +8,18 @@ function States(props, {onSelectChange})
 
     useEffect(() => 
     {
-      fetch(props.url).then(data => data.json()).then(data => {setData(data)});
+      fetch(`https://xc-countries-api.fly.dev/api/countries/${props.url}/states/`).then(data => data.json()).then(data => {setData(data)});
+      console.log(props.url);
     }, [props.url]);
 
     return (
-        <Dropdown url={props.url} className="Select-state" id ="states" type="State"
-          select="state-list" data={data}/>
+        <div>
+            <Dropdown url={`https://xc-countries-api.fly.dev/api/countries/${props.url}/states/`} className="Select-state" id ="states" type="State"
+                select="state-list" data={data}/>
+            <div>
+                <AddState countryId = {props.countryId} url={props.url} className="Enter-state"/>
+            </div>
+        </div>
     );
 
 }

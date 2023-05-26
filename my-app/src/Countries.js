@@ -1,10 +1,9 @@
 import {useState, useEffect} from 'react';
 import Dropdown from './Dropdown.js';
-import AddCountry from './AddCountry';
 
 function Countries(props)
 {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState([""]);
 
     useEffect(() => 
     {
@@ -14,10 +13,7 @@ function Countries(props)
     return (
         <div>
             <Dropdown url={"https://xc-countries-api.fly.dev/api/countries/"} className="Select-country" id="countries" type="Country"
-                select="country-list" data={data} onChange={props.onSelectChange}/>
-            <div>
-                <AddCountry data={data} className="Enter-country"/>
-            </div>
+                select="country-list" data={data.sort((a, b) => (a.name > b.name ? 1 : -1))} onChange={props.onSelectChange}/>
         </div>
     );
 
