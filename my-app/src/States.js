@@ -17,7 +17,7 @@ function States(props, {onSelectChange})
             <Dropdown url={`https://xc-countries-api.fly.dev/api/countries/${props.url}/states/`} className="Select-state" id ="states" type="State"
                 select="state-list" data={data}/>
             <div>
-                <AddState countryId = {props.countryId} url={props.url} className="Enter-state"/>
+                <AddState countryId = {props.countryId} url={props.url} onChange={props.onSelectChange} className="Enter-state"/>
             </div>
         </div>
     );

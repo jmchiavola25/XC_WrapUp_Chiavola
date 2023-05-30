@@ -11,17 +11,17 @@ function AddState(props)
         e.preventDefault();
         console.log("COUNTRY ID IN ADD STATE IS: " + props.countryId);
 
-        fetch(`https://posthere.io/b6ab-4c61-8e03`, {
+        fetch(`https://xc-countries-api.fly.dev/api/states/`, {
             method: 'POST', 
             headers: {"Content-Type": "application/json"}, 
-            body: JSON.stringify({"id": 12, "code": document.getElementById("stateCodeInput").value, "name": document.getElementById("stateNameInput").value, "countryId": countryId})
+            body: JSON.stringify({"code": document.getElementById("stateCodeInput").value, "name": document.getElementById("stateNameInput").value, "countryId": countryId})
         }).then(() => {
             console.log("new state added");
             setIsSubmitAllowed(false);
         });
     }
 
-    const HandleInput = () => {
+    function HandleInput() {
         if (document.getElementById("stateCodeInput").value !== ""
         && document.getElementById("stateNameInput").value !== "")
         {
@@ -35,7 +35,7 @@ function AddState(props)
 
     const onCountryChange = (event) => 
     {
-        setCountryId(event.target.getAttribute('id'));
+        setCountryId(event.target.value.substring(event.target.value.indexOf(",") + 1, event.target.value.length));
     }
 
     return (

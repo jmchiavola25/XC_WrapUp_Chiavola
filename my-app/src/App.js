@@ -15,8 +15,8 @@ function App() {
   const HandleCountryChange = (event) => {
     setSelectedCountry(event.target);
     setSelectedCountryID(event.target.itemId);
-    setSelectedCountryCode(event.target.value);
-    console.log("COUNTRY CODE IS" + selectedCountry.countryId);
+    setSelectedCountryCode(event.target.value.substring(0, event.target.value.indexOf(",")));
+    console.log("COUNTRY CODE IS" + event.target.value);
 
   }
   
@@ -36,7 +36,7 @@ function App() {
             </div>
         <div className="statesDropDown" id="divForStates">
           <h2>Select a State</h2>
-          <States country={selectedCountry} countryId={selectedCountryID} url={selectedCountryCode} className="Select-state" id ="states" type="State"
+          <States country={selectedCountry} countryId={selectedCountryID} url={selectedCountryCode} onSelectChange={HandleCountryChange}className="Select-state" id ="states" type="State"
           select="state-list"/>
         </div>
     </div>

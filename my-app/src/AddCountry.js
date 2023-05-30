@@ -32,12 +32,14 @@ function AddCountry(props)
 
     return (
         <div>
-            <h2>Add a Country</h2>
+            <h2 className="AddACountry">Add a Country</h2>
             <form onChange={HandleInput}>
                 <label for="countryIDInput">Enter a Code</label>
                     <input id="countryCodeInput" type="text"></input>
+                    <div>
                 <label for="countryNameInput">Enter a Name</label>
                     <input id="countryNameInput" type="text"></input>
+                    </div>
             </form>
             {isSubmitAllowed && <input type="submit" onClick={HandleSubmit}></input>}
         </div>
