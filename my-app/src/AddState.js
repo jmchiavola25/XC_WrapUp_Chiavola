@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import Countries from './Countries.js';
+import Dropdown from './Dropdown.js';
 
 function AddState(props)
 {
@@ -45,8 +45,8 @@ function AddState(props)
                     <input id="stateCodeInput" type="text"></input>
                 <label for="stateNameInput">Enter a Name</label>
                     <input id="stateNameInput" type="text"></input>
-                <Countries url={'https://xc-countries-api.fly.dev/api/countries/'} className="Select-country" id="countries" type="Country"
-                select="country-list" params={["code", "id", "name"]} onSelectChange={onCountryChange}/>
+                    <Dropdown className="Select-country" id="countries" type="Country"
+                select="country-list" data={props.data.map(item => ({key: item.code, value: item.id, text: item.name}))} onChange={onCountryChange}/>
             </form>
             {isSubmitAllowed && <input type="submit" onClick={HandleSubmit}></input>}
         </div>
