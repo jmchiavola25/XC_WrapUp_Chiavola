@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import Dropdown from './Dropdown.js';
 import AddState from './AddState.js';
 
-function States(props, {onSelectChange})
+function States(props)
 {
     const [data, setData] = useState([]);
 
@@ -15,7 +15,7 @@ function States(props, {onSelectChange})
     return (
         <div>
             <Dropdown url={`https://xc-countries-api.fly.dev/api/countries/${props.url}/states/`} className="Select-state" id ="states" type="State"
-                select="state-list" data={data}/>
+                select="state-list" data={data.map(item => [item.id, item.code, item.name])}/>
             <div>
                 <AddState countryId = {props.countryId} url={props.url} onChange={props.onSelectChange} className="Enter-state"/>
             </div>

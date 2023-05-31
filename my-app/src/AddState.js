@@ -9,7 +9,6 @@ function AddState(props)
     const HandleSubmit = (e) => {
         console.log("Submit button clicked!");
         e.preventDefault();
-        console.log("COUNTRY ID IN ADD STATE IS: " + props.countryId);
 
         fetch(`https://xc-countries-api.fly.dev/api/states/`, {
             method: 'POST', 
@@ -35,7 +34,7 @@ function AddState(props)
 
     const onCountryChange = (event) => 
     {
-        setCountryId(event.target.value.substring(event.target.value.indexOf(",") + 1, event.target.value.length));
+        setCountryId(event.target.value);
     }
 
     return (
@@ -47,7 +46,7 @@ function AddState(props)
                 <label for="stateNameInput">Enter a Name</label>
                     <input id="stateNameInput" type="text"></input>
                 <Countries url={'https://xc-countries-api.fly.dev/api/countries/'} className="Select-country" id="countries" type="Country"
-                select="country-list" onSelectChange={onCountryChange}/>
+                select="country-list" params={["code", "id", "name"]} onSelectChange={onCountryChange}/>
             </form>
             {isSubmitAllowed && <input type="submit" onClick={HandleSubmit}></input>}
         </div>
