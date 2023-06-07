@@ -8,12 +8,13 @@ function AddCountry(props)
         console.log("Submit button clicked!");
         e.preventDefault();
 
-        fetch('https://xc-countries-api.fly.dev/api/countries/', {
+        fetch('https://localhost:7113/api/Countries', {
             method: 'POST', 
             headers: {"Content-Type": "application/json"}, 
             body: JSON.stringify({"code": document.getElementById("countryCodeInput").value, "name": document.getElementById("countryNameInput").value})
         }).then(() => {
             console.log("new country added");
+            props.onChange();
             setIsSubmitAllowed(false);
         });
     }
