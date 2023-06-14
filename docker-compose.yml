@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  api:
+    container_name: backend
+    build: ./CountriesStatesApi
+    ports: 
+      - 7113:7113
+  client: 
+    container_name: frontend
+    build: ./my-app
+    ports: 
+      - 3000:3000

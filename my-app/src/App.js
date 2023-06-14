@@ -17,21 +17,23 @@ function App() {
       if (updateCountries)
       {
         GetCountries();
+        
       }
     },[updateCountries]);
 
     useEffect(() => {
       if (updateStates)
       {
-      fetch(`https://localhost:7113/api/Countries/${selectedCountryCode}/States/`).then(stateData => stateData.json()).then(stateData => {
+      fetch(`http://localhost:7113/api/Countries/${selectedCountryCode}/States/`).then(stateData => stateData.json()).then(stateData => {
         stateData.sort((a, b) => (a.name > b.name ? 1 : -1));
         setStateData(stateData)});
         setUpdateStates(false);
+        
       }
     }, [selectedCountryCode, updateStates])
 
     const GetCountries = () => {
-      fetch("https://localhost:7113/api/Countries").then(countryData => countryData.json()).then(countryData => {
+      fetch("http://localhost:7113/api/Countries").then(countryData => countryData.json()).then(countryData => {
         countryData.sort((a, b) => (a.name > b.name ? 1 : -1));
         setCountryData(countryData)});
         setUpdateCountries(false);
@@ -39,9 +41,13 @@ function App() {
 
   //When selected country is changed
   const HandleCountryChange = (event) => {
-    setSelectedCountryCode(event.target.value);
-    UpdateStates();
-    console.log("COUNTRY CODE IS " + event.target.value);
+    if (event.value !== "default")
+    {
+    
+      setSelectedCountryCode(event.target.value);
+      UpdateStates();
+      console.log("COUNTRY CODE IS " + event.target.value);
+  }
 
   }
 
@@ -61,7 +67,7 @@ function App() {
       </header>
       <div className="countriesDropDown">
         <h2>Select a Country</h2>
-        <Dropdown className="Select-country" id="countries" type="Country"
+        <Dropdown className="Select-country" id="countries" type="Country" value = "Country"
           select="country-list" data={countryData.map(item => ({key: item.id, value: item.code, text: item.name}))} onChange={HandleCountryChange}/>
         </div>
         <div className="newCountry">
@@ -69,7 +75,7 @@ function App() {
         </div>
         <div className="statesDropDown" id="divForStates">
           <h2>Select a State</h2>
-          <Dropdown className="Select-state" id ="states" type="State"
+          <Dropdown className="Select-state" id ="states" type="State" value = "State"
             select="state-list" data={stateData.map(item => ({key: item.id, value: item.code, text: item.name}))}/>
         </div>
         <div className = "newState">

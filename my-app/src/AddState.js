@@ -10,7 +10,7 @@ function AddState(props)
         console.log("Submit button clicked!");
         e.preventDefault();
 
-        fetch(`https://localhost:7113/api/States`, {
+        fetch(`http://localhost:7113/api/States`, {
             method: 'POST', 
             headers: {"Content-Type": "application/json"}, 
             body: JSON.stringify({"code": document.getElementById("stateCodeInput").value, "name": document.getElementById("stateNameInput").value, "countryId": countryId})
@@ -45,7 +45,7 @@ function AddState(props)
                     <input id="stateCodeInput" type="text"></input>
                 <label for="stateNameInput">Enter a Name</label>
                     <input id="stateNameInput" type="text"></input>
-                    <Dropdown className="Select-country" id="countries" type="Country"
+                    <Dropdown className="Select-country" id="countries" type="Country" value = "Country"
                 select="country-list" data={props.data.map(item => ({key: item.id, value: item.id, text: item.name}))} onChange={onCountryChange}/>
             </form>
             {isSubmitAllowed && <input type="submit" onClick={HandleSubmit}></input>}

@@ -8,7 +8,7 @@ function AddCountry(props)
         console.log("Submit button clicked!");
         e.preventDefault();
 
-        fetch('https://localhost:7113/api/Countries', {
+        fetch('http://localhost:7113/api/Countries', {
             method: 'POST', 
             headers: {"Content-Type": "application/json"}, 
             body: JSON.stringify({"code": document.getElementById("countryCodeInput").value, "name": document.getElementById("countryNameInput").value})
