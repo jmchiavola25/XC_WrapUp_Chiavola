@@ -68,15 +68,21 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="App-title">Countries & States</h1>
+          <Row className="headerRow">
+            <Col className= "titleCol">
+              <h1 className="App-title">Countries & States</h1>
+            </Col>
+            <Col className="navCol">
+              <Navbar className="mr-auto">
+                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                <Nav className = "mr-auto">
+                  <Nav.Link >Select</Nav.Link>
+                  <Nav.Link >Submit</Nav.Link>
+                </Nav>
+              </Navbar>
+            </Col>
+          </Row>
       </header>
-      <Navbar>
-          <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-          <Nav className = "navbar">
-            <Nav.Link >Select</Nav.Link>
-            <Nav.Link >Add</Nav.Link>
-          </Nav>
-      </Navbar>
       <Container>
         <Row>
           <Col>
