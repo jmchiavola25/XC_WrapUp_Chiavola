@@ -7,7 +7,7 @@ import AddState from './AddState.js';
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import {Container, Row, Col, Form} from 'react-bootstrap';
+import {Container, Row, Col, Form, Navbar, Nav} from 'react-bootstrap';
 
 function App() {
 
@@ -70,6 +70,13 @@ function App() {
       <header className="App-header">
         <h1 className="App-title">Countries & States</h1>
       </header>
+      <Navbar>
+          <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+          <Nav className = "navbar">
+            <Nav.Link >Select</Nav.Link>
+            <Nav.Link >Add</Nav.Link>
+          </Nav>
+      </Navbar>
       <Container>
         <Row>
           <Col>
