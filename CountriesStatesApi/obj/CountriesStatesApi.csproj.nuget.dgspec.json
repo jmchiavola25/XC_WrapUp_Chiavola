@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tulac\\OneDrive - Virginia Tech\\XC_Summer2023\\CountriesStatesApi\\CountriesStatesApi.csproj": {}
+    "C:\\Users\\tulac\\OneDrive - Virginia Tech\\XC_Summer2023\\XC_WrapUp_Chiavola\\CountriesStatesApi\\CountriesStatesApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tulac\\OneDrive - Virginia Tech\\XC_Summer2023\\CountriesStatesApi\\CountriesStatesApi.csproj": {
+    "C:\\Users\\tulac\\OneDrive - Virginia Tech\\XC_Summer2023\\XC_WrapUp_Chiavola\\CountriesStatesApi\\CountriesStatesApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tulac\\OneDrive - Virginia Tech\\XC_Summer2023\\CountriesStatesApi\\CountriesStatesApi.csproj",
+        "projectUniqueName": "C:\\Users\\tulac\\OneDrive - Virginia Tech\\XC_Summer2023\\XC_WrapUp_Chiavola\\CountriesStatesApi\\CountriesStatesApi.csproj",
         "projectName": "CountriesStatesApi",
-        "projectPath": "C:\\Users\\tulac\\OneDrive - Virginia Tech\\XC_Summer2023\\CountriesStatesApi\\CountriesStatesApi.csproj",
+        "projectPath": "C:\\Users\\tulac\\OneDrive - Virginia Tech\\XC_Summer2023\\XC_WrapUp_Chiavola\\CountriesStatesApi\\CountriesStatesApi.csproj",
         "packagesPath": "C:\\Users\\tulac\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tulac\\OneDrive - Virginia Tech\\XC_Summer2023\\CountriesStatesApi\\obj\\",
+        "outputPath": "C:\\Users\\tulac\\OneDrive - Virginia Tech\\XC_Summer2023\\XC_WrapUp_Chiavola\\CountriesStatesApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tulac\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -39,6 +39,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.5, )"
@@ -55,7 +59,7 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.7, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

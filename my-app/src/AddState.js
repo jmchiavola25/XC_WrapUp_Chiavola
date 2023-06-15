@@ -17,6 +17,7 @@ function AddState(props)
         }).then(() => {
             console.log("new state added");
             setIsSubmitAllowed(false);
+            props.onSubmit();
         });
     }
 
@@ -45,6 +46,7 @@ function AddState(props)
                     <input id="stateCodeInput" type="text"></input>
                 <label for="stateNameInput">Enter a Name</label>
                     <input id="stateNameInput" type="text"></input>
+                    <h1>  </h1>
                     <Dropdown className="Select-country" id="countries" type="Country" value = "Country"
                 select="country-list" data={props.data.map(item => ({key: item.id, value: item.id, text: item.name}))} onChange={onCountryChange}/>
             </form>

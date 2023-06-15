@@ -1,5 +1,11 @@
+body {
+  background-image: url(https://static.vecteezy.com/system/resources/previews/000/655/246/original/vector-illustration-of-urban-landscape-with-city-skyline-and-building-isolated-on-white-background.jpg);
+  background-size: 110%;
+}
+
 .App {
   text-align: center;
+  
 }
 
 
@@ -15,13 +21,15 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url(https://alliancemagazine-1d0ab.kxcdn.com/wp-content/uploads/2017/03/map-header-01.png);
+  background-size: 30%;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: black;
+  font-family: "Lucida Handwriting", cursive, monospace;
 }
 
 .App-link {
@@ -42,7 +50,6 @@
   font-size: 20px;
   width: 300px;
   margin-left: 50px;
-  margin-top: 50px;
 }
 
 .country-list {
@@ -52,26 +59,61 @@
 .statesDropDown{
   font-size: 20px;
   width: 300px;
-  margin-left: 500px;
-  margin-top: -115px;
-  position: fixed;
+  margin-left: 50px;
 
 }
 
 .state-list {
   width: 300px;
+  margin: center;
 }
 
 .newCountry{
  width: 300px;
   margin-left: 50px;
   font-size:20px;
-  padding-bottom: 200px;
-  position: fixed;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .newState{
   width: 300px;
   font-size: 20px;
-  margin-left: 500px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+.formCountry {
+  background-color: lightblue;
+  width: 400px;
+  height: 320px;
+  border-color: darkblue;
+  border-width: 2px;
+  border-style: solid;
+  margin-top: 100px;
+  margin-left: 60px;
+  font-family: "Copperplate", fantasy;
+}
+
+.formState {
+  background-color: lightblue;
+  width: 400px;
+  border-color: darkblue;
+  border-width: 2px;
+  border-style: solid;
+  margin-top: 100px;
+  margin-left: 180px;
+  font-family: "Copperplate", fantasy;
+}
+
+.formCountry h2 {
+  color: peru;
+}
+
+.formState h2 {
+  color: peru;
+}
+
+label {
+  color: hotpink;
 }
