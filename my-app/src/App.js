@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import {Container, Row, Col, Form, Navbar, Nav} from 'react-bootstrap';
+import {NavLink} from 'react-router-dom';
 
 function App() {
 
@@ -76,8 +77,12 @@ function App() {
               <Navbar className="mr-auto">
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Nav className = "mr-auto">
-                  <Nav.Link >Select</Nav.Link>
-                  <Nav.Link >Submit</Nav.Link>
+                  <Col  className= "selectCol">
+                  <NavLink to="/select">Select</NavLink>
+                  </Col>
+                  <Col className="submitCol">
+                  <NavLink to="/submit">Submit</NavLink>
+                  </Col>
                 </Nav>
               </Navbar>
             </Col>
