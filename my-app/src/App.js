@@ -1,5 +1,5 @@
 import './App.css';
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import AddCountry from './AddCountry.js';
 import Dropdown from './Dropdown.js';
 import AddState from './AddState.js';
@@ -8,7 +8,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import {Container, Row, Col, Form, Navbar, Nav} from 'react-bootstrap';
-import {NavLink} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import {Select} from './components/Select.js';
 
 function App() {
 
@@ -68,39 +69,32 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-          <Row className="headerRow">
-            <Col className= "titleCol">
-              <h1 className="App-title">Countries & States</h1>
-            </Col>
-            <Col className="navCol">
-              <Navbar className="mr-auto">
-                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-                <Nav className = "mr-auto">
-                  <Col  className= "selectCol">
-                  <NavLink to="/select">Select</NavLink>
-                  </Col>
-                  <Col className="submitCol">
-                  <NavLink to="/submit">Submit</NavLink>
-                  </Col>
-                </Nav>
-              </Navbar>
-            </Col>
-          </Row>
-      </header>
+      <Navbar expand="lg" className="bg-body-tertiary">
+      <Container className = "navContainer">
+        <Navbar.Brand as={Link} to="/">Countries & States</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/select">Select</Nav.Link>
+            <Nav.Link as={Link} to="/submit">Submit</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+    <div>
+      <Routes>
+        <Route path="/select" element={<Select name="Jocelyn" data={countryData.map(item => ({key: item.id, value: item.code, text: item.name}))} onChange={HandleCountryChange}/>}>
+        </Route>
+      </Routes>
+    </div>
       <Container>
         <Row>
           <Col>
-      <Form className = "formCountry">
-        <div className="countriesDropDown">
-          <h2>Select a Country</h2>
-          <Dropdown className="Select-country" id="countries" type="Country" value = "Country"
-            select="country-list" data={countryData.map(item => ({key: item.id, value: item.code, text: item.name}))} onChange={HandleCountryChange}/>
-          </div>
-          <div className="newCountry">
-            <AddCountry className="Enter-country" data={countryData} onChange={UpdateCountries}/>
-          </div>
-          </Form>
+            <Form id="formCountry" className = "formCountry">
+              <div className="newCountry">
+                <AddCountry className="Enter-country" data={countryData} onChange={UpdateCountries}/>
+              </div>
+            </Form>
           </Col>
           <Col>
           <Form className = "formState">
@@ -119,5 +113,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;

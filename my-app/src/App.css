@@ -1,6 +1,6 @@
 body {
-  background-image: url(https://static.vecteezy.com/system/resources/previews/000/655/246/original/vector-illustration-of-urban-landscape-with-city-skyline-and-building-isolated-on-white-background.jpg);
-  background-size: 110%;
+  background-image: url(https://wallpaperaccess.com/full/7168014.jpg);
+  background-size: 100%;
 }
 
 .App {
@@ -158,4 +158,13 @@ label {
 .submitCol {
   font-size: 30px;
   font-family: "Lucida Handwriting", cursive, monospace;
+}
+
+.bg-body-tertiary {
+  background-image: url(https://alliancemagazine-1d0ab.kxcdn.com/wp-content/uploads/2017/03/map-header-01.png);
+  background-size: 20%;
+}
+
+.select {
+  font-style: #F76161;
 }
