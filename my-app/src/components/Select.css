@@ -1,0 +1,34 @@
+.selectContents {
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://wallpaperaccess.com/full/7168014.jpg);
+    background-size: 100%;
+}
+
+.dropdownRow {
+    border-style: double;
+    border-color: hotpink;
+    border-width: 5px;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightblue;
+    opacity: 75%;
+}
+
+.countriesDropDown {
+    justify-content: center;
+    align-items: center;
+    padding-right: 50px;
+    color: peru;
+}
+.statesDropDown {
+    justify-content: center;
+    align-items: center;
+    padding-right: 50px;
+    color: purple;
+}

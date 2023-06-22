@@ -1,0 +1,44 @@
+.homeContents {
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    background-image: url(https://wallpaperaccess.com/full/7168014.jpg);
+    background-size: 100%;
+}
+
+.logo {
+    height: 40vmin;
+    pointer-events: none;
+    margin-top: 100px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .logo {
+      animation: rotation infinite 10s linear;
+    }
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+  .title {
+    display:grid;
+  }
+  h1 {
+    font-family: 'Papyrus', fantasy;
+    font-size: 100px;
+    padding-right: 50px;
+    color: red;
+  }
+
+  h2 {
+    color: red;
+  }

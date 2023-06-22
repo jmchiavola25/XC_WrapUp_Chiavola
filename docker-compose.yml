@@ -11,6 +11,8 @@ services:
     build: ./my-app
     ports: 
       - 3000:3000
+    volumes: 
+      - ./my-app:/app
   db:
     image: "mcr.microsoft.com/mssql/server:2022-latest"
     ports:

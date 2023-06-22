@@ -1,11 +1,10 @@
-body {
-  background-image: url(https://wallpaperaccess.com/full/7168014.jpg);
-  background-size: 100%;
-}
-
 .App {
   text-align: center;
   
+}
+
+body {
+  overflow: hidden;
 }
 
 
@@ -110,33 +109,6 @@ body {
   font-family: "Copperplate", fantasy;
 }
 
-.formCountry h2 {
-  color: peru;
-}
-
-.formState h2 {
-  color: peru;
-}
-
-label {
-  color: hotpink;
-}
-
-.headerRow {
-  text-align: left;
-  padding-left: 20px;
-}
-
-.titleRow {
-  text-align: left;
-}
-
-.navCol {
-  text-align: right;
-  align-content: right;
-  size: 50px;
-}
-
 .navbar {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   align-content: right;
@@ -147,24 +119,7 @@ label {
   text-align: right;
 }
 
-.selectCol {
-  padding-right: 50px;
-  padding-left: 400px;
-  font-size: 30px;
-  font-family: "Lucida Handwriting", cursive, monospace;
-  font-style: black;
-}
-
-.submitCol {
-  font-size: 30px;
-  font-family: "Lucida Handwriting", cursive, monospace;
-}
-
 .bg-body-tertiary {
   background-image: url(https://alliancemagazine-1d0ab.kxcdn.com/wp-content/uploads/2017/03/map-header-01.png);
   background-size: 20%;
-}
-
-.select {
-  font-style: #F76161;
 }

@@ -1,0 +1,29 @@
+.submitContents {
+    width: fill;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://wallpaperaccess.com/full/7168014.jpg);
+    background-size: 100%;
+}
+
+.newCountry {
+    color: blueviolet;
+    border-style: double;
+    border-width: 5px;
+    height: 275px;
+    width: 350px;
+    background-color: lightpink;
+    opacity: 75%;
+}
+
+.newState {
+    color: peru;
+    border-style: double;
+    border-width: 5px;
+    height: 275px;
+    width: 350px;
+    background-color: lightpink;
+    opacity: 75%;
+}

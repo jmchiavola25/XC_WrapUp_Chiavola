@@ -1,15 +1,14 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
-import AddCountry from './AddCountry.js';
-import Dropdown from './Dropdown.js';
-import AddState from './AddState.js';
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import {Container, Row, Col, Form, Navbar, Nav} from 'react-bootstrap';
+import {Container, Navbar, Nav} from 'react-bootstrap';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import {Select} from './components/Select.js';
+import {Submit} from './components/Submit.js';
+import {Home} from './components/Home.js';
 
 function App() {
 
@@ -83,33 +82,12 @@ function App() {
     </Navbar>
     <div>
       <Routes>
-        <Route path="/select" element={<Select name="Jocelyn" data={countryData.map(item => ({key: item.id, value: item.code, text: item.name}))} onChange={HandleCountryChange}/>}>
-        </Route>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/select" element={<Select name="Jocelyn" dataC={countryData.map(item => ({key: item.id, value: item.code, text: item.name}))} 
+          dataS={stateData.map(item => ({key: item.id, value: item.code, text: item.name}))} onChange={HandleCountryChange}/>}/>
+        <Route path="/submit" element={<Submit data={countryData} onChangeC={UpdateCountries} onChangeS={HandleCountryChange} onSubmit={UpdateStates}/>}/>
       </Routes>
     </div>
-      <Container>
-        <Row>
-          <Col>
-            <Form id="formCountry" className = "formCountry">
-              <div className="newCountry">
-                <AddCountry className="Enter-country" data={countryData} onChange={UpdateCountries}/>
-              </div>
-            </Form>
-          </Col>
-          <Col>
-          <Form className = "formState">
-          <div className="statesDropDown" id="divForStates">
-            <h2>Select a State</h2>
-            <Dropdown className="Select-state" id ="states" type="State" value = "State"
-              select="state-list" data={stateData.map(item => ({key: item.id, value: item.code, text: item.name}))}/>
-          </div>
-          <div className = "newState">
-            <AddState data={countryData} onChange={HandleCountryChange} onSubmit={UpdateStates} className="Enter-state"/>
-          </div>
-          </Form>
-          </Col>
-          </Row>
-      </Container>
     </div>
   );
 }
